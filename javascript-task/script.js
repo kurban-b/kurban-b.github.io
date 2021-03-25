@@ -1,35 +1,39 @@
-// REDUCE - ЗАДАНИЯ
-//-------------------
-let arr1 = [-13, 0, 12, 1662, -0.32, -102, -2];
-let arrNegNums = arr1.filter(function (item) { return item < 0});
-let sumNegNums = arrNegNums.reduce(function (sum, item){ return sum + item},);
-//-------------------
-let arr2 = [{x: 10, y: 'lorem'},{x: 21, y: 'lorem'},{x: -17, y: 'lorem'},{x: 156, y: 'lorem'}];
-let sumObjX = arr2.reduce(function (sum, item){
-    return sum + item.x
-},0);
-//-------------------
+//Создайте и добавьте с помощью JS между блоками one и three, div, внутри которого будет курсивный текст “dolor sit amet”;
 
-// DOM - задания
-// - Получить узел html
-document.documentElement;
+let div = document.createElement('div');
+let divOne = document.getElementById('one');
+divOne.after(div);
+divOne.nextElementSibling;
+divOne.nextElementSibling.append('dolor sit amet');
+divOne.nextElementSibling.classList.add('italic');
 
-// - Пользуясь узлом `document.body` получить узлы `<b>` и `<i>`.
-let b = document.body.firstElementChild.firstElementChild.firstElementChild;
-let i = document.body.firstElementChild.lastElementChild.firstElementChild;
-// - Поменять цвет текста  `<b>` на красный, а  `<i>` на коричневый.
-b.className = 'text-color-red';
-i.className = 'text-color-brown';
-// - Получить текстовый узел  ‘интукод’ находящийся внутри тега `<title>`, и поменять его на 'intocode’.
-let title = document.head.lastElementChild.previousElementSibling;
-title.innerHTML = 'intocode';
-// - Изменить содержимое `<li>` с текстом
-let li = document.body.firstElementChild.lastElementChild.lastElementChild.children;
-    li[0].innerHTML = 'html';
-    li[1].innerHTML = 'css';
-    li[2].innerHTML = 'git';
-    li[3].innerHTML = 'js';
+//Добавьте для этого дива атрибут id со значением two.
+divOne.nextElementSibling.id = 'two';
 
+//Добавьте в начала списка элемент li с тектом html
+let ul = document.getElementsByTagName('ul')[0];
+let li = document.createElement('li');
+ul.prepend(li)
+li.innerHTML = 'html';
+
+//Добавьте в список элемент li с тектом js между элементами git и react
+let li2 = document.createElement('li');
+ul.lastElementChild.before(li2);
+li2.textContent = 'js';
+
+// Удалите div с классом “zero”
+let divZero = document.getElementsByClassName('zero')[0].remove()
+
+// Каждому из трех оставшихся дивов задайте свой фоновый цвет
+divOne.style.backgroundColor = 'orange';
+document.getElementById('two').style.backgroundColor = 'green';
+document.getElementById('three').style.backgroundColor = 'yellow';
+
+// Уберите маркеры у списка (свойство: `list-style: none;`)
+ul.classList.add('resetListStyle');
+
+// К диву с классом “main” добавьте класс “container”
+document.getElementsByClassName('main')[0].classList.add('container');
 
 
 
