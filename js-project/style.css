@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: 'Georgia';
+}
+
+.cont {
+    background-color: #1e058a;
+    width: 800px;
+    margin: auto;
+    padding: 20px 20px;
+    background-image: url(img/bg.png);
+    background-size: cover;
+    position: relative;
+}
+.cont h1 {
+    margin: 0;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 20px brown;
+}
+.wrap {
+    padding: 50px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.map {
+    color: white;
+    margin: 30px auto;
+    font-family: 'Helvetica';
+    width: 280px;
+    background-color: rgba(220,220,220, .5);
+}
+.main .block {
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 0 0 10px white;
+}
+.map_cont {
+    display: flex;
+}
+.top {
+    display: flex;
+    background-color: #242424;
+}
+.left {
+    background-color: #242424;
+}
+.main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block {
+    border: 1px solid #fff;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding: 6px 0;
+    cursor: pointer;
+}
+.ship {
+    background-image: url(img/ship.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#result {
+    color: white;
+    width: 80%;
+    background-color: #54545490;
+    padding: 20px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 30px;
+    border: 2px solid #ffffff;
+}
+
+
+
+.modal {
+    width: 400px;
+    height: 300px;
+    background-color: #ffffff;
+    position: absolute;
+    left: 200px;
+    top: 70px;
+    display: none;
+    background-image: url("img/modal.jpg");
+    background-size: cover;
+}
+.modal h1 {
+    padding: 120px 0 20px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.sum {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    background-color: #00000090;
+    padding: 20px 10px;
+}
+.sum h6 {
+    text-align: center;
+    font-size: 14px;
+    color: white;
+    margin: 0 0 10px 0;
+}
+#vistril {
+    margin: auto;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #ffffff99;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 50%;
+    color: brown;
+    width: 60px;
+    height: 60px;
+}
+
+.mod-lvl {
+    display: block;
+    color: white;
+    text-align: center;
+}
+.mod-lvl .group {
+    width: 60%;
+    margin: auto;
+}
+#lvl-1, #lvl-2, #lvl-3 {
+    background-color: #000;
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 10px;
+}
