@@ -1,38 +1,26 @@
 
+// 1
+let arr1 = [101, 202, 303, 404, 505];
+let arr2 = [606, 707, 808, 909];
+let superArr = [...arr1, ...arr2];
 
-let main = document.getElementById('main-post').firstElementChild;
-let mainTitle = main.firstElementChild.firstElementChild;
+console.log(superArr);
 
-let post1 = document.getElementById('post-1-tab');
-let post2 = document.getElementById('post-2-tab');
-let post3 = document.getElementById('post-3-tab');
-let post4 = document.getElementById('post-4-tab');
+// 2
+console.log(Math.min(...superArr));
 
-post1.addEventListener('click', actPost);
-post2.addEventListener('click', actPost);
-post3.addEventListener('click', actPost);
-post4.addEventListener('click', actPost);
+//3
+let obj = {
+    width: 300,
+    height: 550,
+};
 
-post1.addEventListener('click', changeMain);
-post2.addEventListener('click', changeMain);
-post3.addEventListener('click', changeMain);
-post4.addEventListener('click', changeMain);
+let newObj = {...obj, area: function () { return this.width * this.height }};
+console.log(newObj.area());
 
+//4
 
-function actPost() {
-    post1.classList.remove('active');
-    post2.classList.remove('active');
-    post3.classList.remove('active');
-    post4.classList.remove('active');
-    this.classList.add('active');
-}
-
-function changeMain() {
-    let img = this.firstElementChild.firstElementChild.firstElementChild.src;
-    let title = this.firstElementChild.lastElementChild.firstElementChild.innerHTML;
-    main.style.backgroundImage = `url(${img})`;
-    mainTitle.innerHTML = title;
-
-
-}
-
+function sumNums (...rest) {
+    return rest.reduce((sum,item) => {return sum + item},0);
+};
+console.log( sumNums(10, 20, 30, 40))
