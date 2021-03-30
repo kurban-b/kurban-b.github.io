@@ -4,10 +4,13 @@ let arr = map.children;
 let arr2 = [];
 let result = document.querySelector('#result');
 let sum = document.getElementById('vistril');
-let modal = document.getElementById('mod')
-
+let modal = document.getElementById('mod');
+let download = document.getElementById('download-id');
 let levels = document.getElementById('lvl-group').children;
 let arrLvl = [];
+
+document.addEventListener('DOMContentLoaded', downLo)
+
 
 for (let i = 0; i < levels.length; i++) {
     arrLvl.push(levels[i])
@@ -42,7 +45,7 @@ let ship = [arr2[0], arr2[1], arr2[2], arr2[15], arr2[16], arr2[17], arr2[35], a
 
 function add () {
 
-    if (this == arr2[0] || this == arr2[1] || this == arr2[2] || this == arr2[15] ||
+    if (this == arr2[0] || this == arr2[1] || this == arr2[2] || this == arr2[40] ||
         this == arr2[16] || this == arr2[17] || this == arr2[35] || this == arr2[36] || this == arr2[37]) {
         this.classList.add('ship')
         result.innerHTML = 'Попал!'
@@ -68,7 +71,7 @@ function finish(){
         modal.style.backgroundImage = 'url(img/modal2.jpg)';
     }
     if (arr2[0].className == 'block ship' && arr2[1].className == 'block ship' && arr2[2].className == 'block ship' &&
-        arr2[15].className == 'block ship' && arr2[16].className == 'block ship' && arr2[17].className == 'block ship' &&
+        arr2[40].className == 'block ship' && arr2[16].className == 'block ship' && arr2[17].className == 'block ship' &&
         arr2[35].className == 'block ship' && arr2[36].className == 'block ship' && arr2[37].className == 'block ship') {
         result.innerHTML = 'Вы выиграли!!!';
         let win = new Audio('audio/win.mp3');
@@ -82,3 +85,9 @@ function sumV() {
     sum.innerHTML = sum.innerHTML - 1;
 }
 
+function downLo () {
+
+    setTimeout(function () {
+        download.style.display = 'none';
+    }, 2000)
+}
